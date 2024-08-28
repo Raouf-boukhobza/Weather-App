@@ -15,7 +15,7 @@ private data class indexWeatherData(
 )
 
 fun WeatherDataDto.toweatehrDataMap() : Map<Int , List<WeatherData>>{
-    return time.mapIndexed{index, time ->
+    return time.mapIndexed{ index, time ->
         val temperature = temperatures[index]
         val windSpeed = windSpeeds[index]
         val weathercode = weatherCodes[index]
