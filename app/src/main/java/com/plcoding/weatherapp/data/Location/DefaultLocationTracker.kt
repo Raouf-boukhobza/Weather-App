@@ -53,7 +53,7 @@ class DefaultLocationTracker @Inject constructor(
                 addOnSuccessListener {
                     cor.resume(it)
                 }
-                addOnSuccessListener {
+                addOnFailureListener {
                     cor.resume(null)
                 }
                 addOnCanceledListener {
