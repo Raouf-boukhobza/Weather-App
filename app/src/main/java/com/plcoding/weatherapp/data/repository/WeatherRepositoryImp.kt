@@ -21,7 +21,7 @@ class WeatherRepositoryImp @Inject constructor(
             )
         } catch (e: Exception) {
             e.printStackTrace()
-            Resource.Error(message = e.message ?: "Unknow error type")
+            Resource.Error(message = e.message ?: "Unknown error type")
         }
     }
 }

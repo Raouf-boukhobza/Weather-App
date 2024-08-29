@@ -16,4 +16,5 @@ abstract class RepositoryModule {
     @Binds
     @Singleton
     abstract fun provideRepository(repositoryImp: WeatherRepositoryImp) : WeatherRepository
+
 }
