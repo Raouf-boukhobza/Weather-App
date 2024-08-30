@@ -1,5 +1,7 @@
 package com.plcoding.weatherapp.presentation
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -25,6 +27,7 @@ import com.plcoding.weatherapp.R
 import java.time.format.DateTimeFormatter
 
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun WeatherCard(
     state: WeatherState,
@@ -46,7 +49,7 @@ fun WeatherCard(
             ) {
                 Text(
                     text = "Today ${
-                        data.time.format(DateTimeFormatter.ofPattern("HH:MM"))
+                        data.time.format(DateTimeFormatter.ofPattern("HH:mm"))
                     }",
                     fontSize = 16.sp,
                     modifier = Modifier.align(Alignment.End),
