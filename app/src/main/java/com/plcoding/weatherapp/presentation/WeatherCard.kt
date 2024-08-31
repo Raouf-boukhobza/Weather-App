@@ -24,6 +24,7 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.plcoding.weatherapp.R
+import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 
@@ -49,7 +50,7 @@ fun WeatherCard(
             ) {
                 Text(
                     text = "Today ${
-                        data.time.format(DateTimeFormatter.ofPattern("HH:mm"))
+                        LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm"))
                     }",
                     fontSize = 16.sp,
                     modifier = Modifier.align(Alignment.End),
