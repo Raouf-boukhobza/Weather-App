@@ -23,17 +23,17 @@ import androidx.compose.ui.unit.sp
 import com.plcoding.weatherapp.presentation.ui.theme.DarkBlue
 import com.plcoding.weatherapp.presentation.ui.theme.DeepBlue
 import com.plcoding.weatherapp.presentation.ui.theme.WeatherAppTheme
-import dagger.hilt.android.AndroidEntryPoint
+import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 
-@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-    private val viewModel: WeatherViewModel by viewModels()
+
+
     private lateinit var launchPermission: ActivityResultLauncher<Array<String>>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
+        val viewModel = getViewModel<WeatherViewModel>()
         launchPermission = registerForActivityResult(
             ActivityResultContracts.RequestMultiplePermissions()
         ) {
@@ -70,13 +70,13 @@ class MainActivity : ComponentActivity() {
                         )
                     }
                     viewModel.weatherState.error?.let { error ->
-                       Text(
+                        Text(
                             text = error,
                             fontSize = 18.sp,
-                           fontWeight = FontWeight.Medium,
-                           color = androidx.compose.ui.graphics.Color.Red,
-                           textAlign = TextAlign.Center,
-                           modifier = Modifier.align(Alignment.Center)
+                            fontWeight = FontWeight.Medium,
+                            color = androidx.compose.ui.graphics.Color.Red,
+                            textAlign = TextAlign.Center,
+                            modifier = Modifier.align(Alignment.Center)
                         )
                     }
                 }

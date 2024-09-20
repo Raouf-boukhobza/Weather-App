@@ -13,7 +13,7 @@ import kotlinx.coroutines.suspendCancellableCoroutine
 import javax.inject.Inject
 import kotlin.coroutines.resume
 
-class DefaultLocationTracker @Inject constructor(
+class DefaultLocationTracker(
     private val locationClient : FusedLocationProviderClient,
     private val application: Application
 ): LocationTracker {

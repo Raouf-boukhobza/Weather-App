@@ -7,7 +7,7 @@ import com.plcoding.weatherapp.domain.util.Resource
 import com.plcoding.weatherapp.domain.weather.WeatherInfo
 import javax.inject.Inject
 
-class WeatherRepositoryImp @Inject constructor(
+class WeatherRepositoryImp (
     private val weatherApi: WeatherApi
 ) : WeatherRepository {
 
