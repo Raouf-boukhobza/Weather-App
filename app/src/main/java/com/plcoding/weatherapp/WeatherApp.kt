@@ -5,7 +5,6 @@ import com.plcoding.weatherapp.di.appModule
 import com.plcoding.weatherapp.di.locationModule
 import com.plcoding.weatherapp.di.repositoryModule
 import com.plcoding.weatherapp.di.viewModelModule
-import dagger.hilt.android.HiltAndroidApp
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 

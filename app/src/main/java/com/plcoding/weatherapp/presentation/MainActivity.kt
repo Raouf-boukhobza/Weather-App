@@ -1,12 +1,13 @@
 package com.plcoding.weatherapp.presentation
 
 import android.Manifest
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.activity.viewModels
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -23,17 +24,18 @@ import androidx.compose.ui.unit.sp
 import com.plcoding.weatherapp.presentation.ui.theme.DarkBlue
 import com.plcoding.weatherapp.presentation.ui.theme.DeepBlue
 import com.plcoding.weatherapp.presentation.ui.theme.WeatherAppTheme
-import org.koin.androidx.viewmodel.ext.android.getViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class MainActivity : ComponentActivity() {
 
 
     private lateinit var launchPermission: ActivityResultLauncher<Array<String>>
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val viewModel = getViewModel<WeatherViewModel>()
+        val viewModel : WeatherViewModel by viewModel()
         launchPermission = registerForActivityResult(
             ActivityResultContracts.RequestMultiplePermissions()
         ) {

@@ -10,7 +10,6 @@ import androidx.core.content.ContextCompat
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.plcoding.weatherapp.domain.Location.LocationTracker
 import kotlinx.coroutines.suspendCancellableCoroutine
-import javax.inject.Inject
 import kotlin.coroutines.resume
 
 class DefaultLocationTracker(

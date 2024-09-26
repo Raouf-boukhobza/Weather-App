@@ -8,10 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.plcoding.weatherapp.domain.Location.LocationTracker
 import com.plcoding.weatherapp.domain.repository.WeatherRepository
 import com.plcoding.weatherapp.domain.util.Resource
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import javax.inject.Inject
-
 
 
 class WeatherViewModel (
